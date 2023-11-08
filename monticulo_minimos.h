@@ -11,6 +11,7 @@ typedef struct monticulo {
 }tMount; 
 
 void crearMonticulo (int v[], int n, tMount M); 
-int quitarMenor (tMount M)
+int quitarMenor (tMount M);
+void liberarMonticulo(tMount M);
 
 #endif //ALGORITMOS_P3_MONTICULO_MINIMOS_H

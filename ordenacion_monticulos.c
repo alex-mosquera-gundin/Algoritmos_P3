@@ -1,6 +1,6 @@
 #include "ordenacion_monticulos.h"
+#include "monticulo_minimos.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
 
 //rellena el array de forma aleatoria
@@ -31,7 +31,19 @@ void rellenar_array_descendente(int array[], int len){
 
 //ordena el array por medio de monticulos
 void ordenar_array_por_monticulos(int array[], int len){
+    //crear variables
+    int i;
+    tMount mount;
 
+    //crear monticulo
+    crearMonticulo(array, len, mount);
+
+    //rellenar el vector
+    for(i = 0; i < len; i++)
+        array[i] = quitarMenor(mount);
+
+    //liberar memoria
+    liberarMonticulo(mount);
 }
 
 //devuelve un 1 si el array está ordenado y un 0 si no
