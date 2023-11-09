@@ -91,7 +91,8 @@ double cota_On2_2 (int n){
 }
 
 
-void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), double cota_sobre(int), void funcion_ordenacion(int[], int), void fill_array(int[], int)){
+void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), double cota_sobre(int), 
+                             void funcion_ordenacion(int[], int), void fill_array(int[], int)) {
     //inicializar variables
     int v[MAX_LENGTH];
     int len;
@@ -103,8 +104,6 @@ void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), doub
         printf("\t\t%7d\t\t%14.3lf\t\t%2.10lf\t\t%2.10lf\t\t%2.10lf\n", len, t, t / cota_sub(len), t / cota_normal(len), t / cota_sobre(len));
     }
 }
-
-
 
 
 int main(){
