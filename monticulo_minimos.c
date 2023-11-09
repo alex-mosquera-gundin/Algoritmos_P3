@@ -1,6 +1,7 @@
 #include "monticulo_minimos.h"
 #define TAM 256000
 
+
 // procedimiento privado de la libreria
 // flota el elemento de un `nodo` del monticulo recalculando su posicion de acuerdo a la estructura de un monticulo
 // de minimos

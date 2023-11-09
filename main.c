@@ -16,7 +16,6 @@ double microsegundos() {
     return (t.tv_usec + t.tv_sec * 1000000.0);
 }
 
-
 double tiempo_test_generico(void funcion_ordenacion(int[], int), int vector[], int len, void fill_array(int[], int)){
     //declarar variables
     double t, start, end;

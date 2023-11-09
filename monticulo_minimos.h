@@ -2,6 +2,7 @@
 #define ALGORITMOS_P3_MONTICULO_MINIMOS_H
 #define TAM 256000
 
+
 // estructura de un monticulo de minimos
 // mont_len : tamaño del vector del monticulo
 // vector[] : conjunto de `nodos` del monticulo recogidos en un vector de enteros
