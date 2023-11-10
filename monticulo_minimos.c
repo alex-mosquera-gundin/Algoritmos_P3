@@ -61,6 +61,7 @@ void crearMonticulo(int v[], int n, pmont m) {
 
 
 // funcion publica de la libreria
+// elimina el minimo del monticulo y lo devuelve
 int quitarMenor (pmont m) {
     int x = m->vector[0]; // por estructura especifica del monticulo el minimo (la raiz) esta ubicada en la posicion 0 del vector
     int i;

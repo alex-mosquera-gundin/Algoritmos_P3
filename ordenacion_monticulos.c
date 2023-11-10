@@ -33,7 +33,7 @@ void rellenar_array_descendente(int array[], int len){
 void ordenar_array_por_monticulos(int array[], int len){
     //crear variables
     int i;
-    tMount mount;
+    pmont mount;
 
     //crear monticulo
     crearMonticulo(array, len, mount);
@@ -43,7 +43,7 @@ void ordenar_array_por_monticulos(int array[], int len){
         array[i] = quitarMenor(mount);
 
     //liberar memoria
-    liberarMonticulo(mount);
+    
 }
 
 //devuelve un 1 si el array está ordenado y un 0 si no
