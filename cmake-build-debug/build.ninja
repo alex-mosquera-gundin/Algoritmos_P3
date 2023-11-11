@@ -56,8 +56,8 @@ build CMakeFiles/Algoritmos_P3.dir/main.c.o: C_COMPILER__Algoritmos_P3_unscanned
   OBJECT_DIR = CMakeFiles/Algoritmos_P3.dir
   OBJECT_FILE_DIR = CMakeFiles/Algoritmos_P3.dir
 
-build CMakeFiles/Algoritmos_P3.dir/monticulo_minimos.c.o: C_COMPILER__Algoritmos_P3_unscanned_Debug /home/drako/UDC/1Q/Algoritmos/Algoritmos_P3/monticulo_minimos.c || cmake_object_order_depends_target_Algoritmos_P3
-  DEP_FILE = CMakeFiles/Algoritmos_P3.dir/monticulo_minimos.c.o.d
+build CMakeFiles/Algoritmos_P3.dir/ordenacion_monticulos.c.o: C_COMPILER__Algoritmos_P3_unscanned_Debug /home/drako/UDC/1Q/Algoritmos/Algoritmos_P3/ordenacion_monticulos.c || cmake_object_order_depends_target_Algoritmos_P3
+  DEP_FILE = CMakeFiles/Algoritmos_P3.dir/ordenacion_monticulos.c.o.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   INCLUDES = -I/home/drako/UDC/1Q/Algoritmos/Algoritmos_P3/.
   OBJECT_DIR = CMakeFiles/Algoritmos_P3.dir
@@ -71,7 +71,7 @@ build CMakeFiles/Algoritmos_P3.dir/monticulo_minimos.c.o: C_COMPILER__Algoritmos
 #############################################
 # Link the executable Algoritmos_P3
 
-build Algoritmos_P3: C_EXECUTABLE_LINKER__Algoritmos_P3_Debug CMakeFiles/Algoritmos_P3.dir/main.c.o CMakeFiles/Algoritmos_P3.dir/monticulo_minimos.c.o
+build Algoritmos_P3: C_EXECUTABLE_LINKER__Algoritmos_P3_Debug CMakeFiles/Algoritmos_P3.dir/main.c.o CMakeFiles/Algoritmos_P3.dir/ordenacion_monticulos.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Algoritmos_P3.dir
   POST_BUILD = :

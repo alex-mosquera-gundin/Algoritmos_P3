@@ -47,7 +47,7 @@ void ordenar_array_por_monticulos(int array[], int len){
 }
 
 //devuelve un 1 si el array está ordenado y un 0 si no
-int es_array_ordenado(int array[], int len){
+int es_array_ordenado(int array[], int len) {
     int cond = 1, i;
     for(i = 1; i < len && cond; i++)
         if(array[i-1] > array[i])

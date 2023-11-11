@@ -3,7 +3,10 @@
 #include <time.h>
 #include <sys/time.h>
 #include <math.h>
+#include "ordenacion_monticulos.h"
+#include "monticulo_minimos.h"
 
+#define TEST_LEN 10 
 #define MAX_LENGTH 256000
 #define STARTING_LENGTH 500
 #define UMBRAL_CONFIANZA 500
@@ -14,6 +17,40 @@ double microsegundos() {
     if (gettimeofday(&t, NULL) < 0 )
         return 0.0;
     return (t.tv_usec + t.tv_sec * 1000000.0);
+}
+
+void fill_array_sin_orden(int v[], int len) {
+   int i;
+    for (i = 0; i < len; i++) {
+        v[i] = rand() % 10;
+    }
+}
+
+void fill_array_orden_ascendente(int v[], int len) {
+    int i;
+    for (i = 0; i < len; i++) {
+        v[i] = i + 1;
+    }
+}
+
+void fill_array_orden_descendente(int v[], int len) {
+    int i;
+    for (i = 0; i < len; i++) {
+        v[i] = len - i - 1;
+    }
+}
+
+void inicializar_semilla() {
+    srand(time(NULL));
+}
+
+void show_array(int v[], int len) {
+    int i;
+    printf("\n");
+    for (i = 0; i < len; ++i) {
+       printf("%d  ", v[i]);
+    }
+    printf("\n");
 }
 
 double tiempo_test_generico(void funcion_ordenacion(int[], int), int vector[], int len, void fill_array(int[], int)){
@@ -106,5 +143,17 @@ void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), doub
 
 
 int main(){
-    printf("test");
+    printf("test"); 
+    // comprobacion del funcionamiento del algoritmo de ordenacion, ademas de comprobacion de que esta ordenacion se cumple con una 
+    // complejidad de O(n) 
+    int v[TEST_LEN]; 
+    fill_array_sin_orden(v, TEST_LEN);  
+    show_array(v, TEST_LEN); 
+    printf("\nEs ordenado? %d", es_array_ordenado(v, TEST_LEN)); // comprobar que esta ordenado 
+
+    // una vez rellenado el array de forma aleatoria y mostrado por pantalla, ordenarlo por monticulos de minimos y mostrarlo por 
+    // pantalla ya ordenado 
+    ordenar_array_por_monticulos(v, TEST_LEN); 
+    show_array(v, TEST_LEN);
+    printf("\nEs ordenado? %d", es_array_ordenado(v, TEST_LEN)); 
 }
