@@ -195,6 +195,7 @@ int main(){
 
     printf("\n\n\nAlgoritmo -- Ordenacion por monticulos:\n\n");
 
+    printf("\n\nOrdenacion por monticulos con inicializacion ascendente:\n\n");
     printf("\t\t      n\t\t\t  t(n)\t\t    t(n)/n^1\t\tt(n)/nlog(n)\t\t  t(n)/n^1.5\n");
     escribir_tabla_generico(cota_On1, cota_Onlogn, cota_On1_5, rellenar_array_ascendente, tiempo_test_ordenar_por_monticulos);
 
