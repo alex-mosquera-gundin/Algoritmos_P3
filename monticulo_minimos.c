@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monticulo_minimos.h"
 #define TAM 256000
 
@@ -60,15 +61,19 @@ void crearMonticulo(int v[], int n, pmont m) {
 }
 
 
-// funcion publica de la libreria
+// función publica de la libreria
 // elimina el minimo del monticulo y lo devuelve
-int quitarMenor (pmont m) {
-    int x = m->vector[0]; // por estructura especifica del monticulo el minimo (la raiz) esta ubicada en la posicion 0 del vector
-    int i;
-    for (i = m->len; i >= 0; i--) {
-        hundir (m, i);
-    }
+int quitarMenor(pmont m) {
+    int x = m->vector[1];
 
-    return x;  //  devuelve el minimo despues de guardarlo en x y eliminarlo del monticulo
+    m->vector[1] = m->vector[m->len];
+    m->len--;
+
+    hundir(m, 1);
+
+    printf("%d ", x);
+
+    return x;  // devuelve el minimo después de guardarlo en x y eliminarlo del monticulo
 }
+
 

@@ -33,7 +33,7 @@ void rellenar_array_descendente(int array[], int len){
 void ordenar_array_por_monticulos(int array[], int len){
     //crear variables
     int i;
-    pmont mount;
+    pmont mount = NULL;
 
     //crear monticulo
     crearMonticulo(array, len, mount);
