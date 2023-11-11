@@ -182,29 +182,28 @@ int main(){
     printf("\n\nAlgoritmo -- Crear monticulo");
 
     printf("\n\nCrear monticulo con inicializacion ascendente:\n\n");
-    printf("\t\tn\t\t\tt(n)\t\tt(n)/n^0.8\t\tt(n)/n^1\t\tt(n)/n^1.2\n");
+    printf("\t\t      n\t\t\t  t(n)\t\t  t(n)/n^0.8\t\t    t(n)/n^1\t\t  t(n)/n^1.2\n");
     escribir_tabla_generico(cota_On0_8, cota_On1, cota_On1_2, rellenar_array_ascendente, tiempo_test_crear_monticulo);
 
     printf("\n\nCrear monticulo con inicializacion desordenada:\n\n");
-    printf("\t\tn\t\t\tt(n)\t\tt(n)/n^0.8\t\tt(n)/n^1\t\tt(n)/n^1.2\n");
+    printf("\t\t      n\t\t\t  t(n)\t\t  t(n)/n^0.8\t\t    t(n)/n^1\t\t  t(n)/n^1.2\n");
     escribir_tabla_generico(cota_On0_8, cota_On1, cota_On1_2, rellenar_array_aleatorio, tiempo_test_crear_monticulo);
 
     printf("\n\nCrear monticulo con inicializacion descendente:\n\n");
-    printf("\t\tn\t\t\tt(n)\t\tt(n)/n^0.8\t\tt(n)/n^1\t\tt(n)/n^1.2\n");
+    printf("\t\t      n\t\t\t  t(n)\t\t  t(n)/n^0.8\t\t    t(n)/n^1\t\t  t(n)/n^1.2\n");
     escribir_tabla_generico(cota_On0_8, cota_On1, cota_On1_2, rellenar_array_descendente, tiempo_test_crear_monticulo);
 
-    printf("\n\n\nAlgoritmo -- Ordenacion por monticulos");
+    printf("\n\n\nAlgoritmo -- Ordenacion por monticulos:\n\n");
 
-    printf("\n\nOrdenacion por monticulos con inicializacion ascendente:\n\n");
-    printf("\t\tn\t\t\tt(n)\t\tt(n)/n\t\t\tt(n)/nlog(n)\t\tt(n)/n^1.5\n");
+    printf("\t\t      n\t\t\t  t(n)\t\t    t(n)/n^1\t\tt(n)/nlog(n)\t\t  t(n)/n^1.5\n");
     escribir_tabla_generico(cota_On1, cota_Onlogn, cota_On1_5, rellenar_array_ascendente, tiempo_test_ordenar_por_monticulos);
 
     printf("\n\nOrdenacion por monticulos con inicializacion desordenada:\n\n");
-    printf("\t\tn\t\t\tt(n)\t\tt(n)/n\t\t\tt(n)/nlog(n)\t\tt(n)/n^1.5\n");
+    printf("\t\t      n\t\t\t  t(n)\t\t    t(n)/n^1\t\tt(n)/nlog(n)\t\t  t(n)/n^1.5\n");
     escribir_tabla_generico(cota_On1, cota_Onlogn, cota_On1_5, rellenar_array_aleatorio, tiempo_test_ordenar_por_monticulos);
 
     printf("\n\nOrdenacion por monticulos con inicializacion descendente:\n\n");
-    printf("\t\tn\t\t\tt(n)\t\tt(n)/n\t\t\tt(n)/nlog(n)\t\tt(n)/n^1.5\n");
+    printf("\t\t      n\t\t\t  t(n)\t\t    t(n)/n^1\t\tt(n)/nlog(n)\t\t  t(n)/n^1.5\n");
     escribir_tabla_generico(cota_On1, cota_Onlogn, cota_On1_5, rellenar_array_descendente, tiempo_test_ordenar_por_monticulos);
 
     printf("\n\n\n");
