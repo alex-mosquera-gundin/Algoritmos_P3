@@ -6,7 +6,7 @@
 #include "ordenacion_monticulos.h"
 #include "monticulo_minimos.h"
 
-#define TEST_LEN 250
+#define TEST_LEN 10
 #define MAX_LENGTH 256000
 #define STARTING_LENGTH 500
 #define UMBRAL_CONFIANZA 500
@@ -125,7 +125,7 @@ void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), doub
     liberar_data(data);
 }
 
-void funct_vacia(void *pointer){};
+void funct_vacia(void *pointer){}
 
 
 //datos para medir la creación por montículos
