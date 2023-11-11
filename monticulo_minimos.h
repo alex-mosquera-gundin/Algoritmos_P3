@@ -2,15 +2,18 @@
 #define ALGORITMOS_P3_MONTICULO_MINIMOS_H
 #define TAM 256000
 
-struct monticulo {
+typedef struct monticulo {
     int ultimo;
     int vector[TAM];
-};
+}*pmonticulo;
 
-typedef struct monticulo * pmonticulo;
 
 // cabecera de funciones publicas de la libreria de monticulo_minimos.h
-void crearMonticulo (int v[], int n, pmonticulo m);
+
+//crea un montículo a partir del vector y la longitud dada y se lo asigna al puntero dado
+void crearMonticulo (int v[], int len, pmonticulo m);
+
+//quita y devuelve el último elemento del montículo
 int quitarMenor (pmonticulo m);
 
 #endif //ALGORITMOS_P3_MONTICULO_MINIMOS_H

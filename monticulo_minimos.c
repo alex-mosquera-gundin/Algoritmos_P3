@@ -44,8 +44,8 @@ void crearMonticulo(int v[], int n, pmonticulo m) {
     m->ultimo = n;
 
     // Copiar los elementos del array al vector del montículo
-    for (int i = 1; i <= n; i++) {
-        m->vector[i] = v[i - 1];
+    for (int i = 0; i < n; i++) {
+        m->vector[i] = v[i];
     }
 
     // Aplicar la operación hundir para mantener la propiedad de montículo

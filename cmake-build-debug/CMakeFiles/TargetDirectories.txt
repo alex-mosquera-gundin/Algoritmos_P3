@@ -1,3 +1,3 @@
-/home/drako/UDC/1Q/Algoritmos/Algoritmos_P3/cmake-build-debug/CMakeFiles/Algoritmos_P3.dir
-/home/drako/UDC/1Q/Algoritmos/Algoritmos_P3/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/drako/UDC/1Q/Algoritmos/Algoritmos_P3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Heros/CLionProjects/Algoritmos_P3/cmake-build-debug/CMakeFiles/Algoritmos_P3.dir
+C:/Users/Heros/CLionProjects/Algoritmos_P3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Heros/CLionProjects/Algoritmos_P3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
