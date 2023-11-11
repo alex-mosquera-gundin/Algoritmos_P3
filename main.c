@@ -6,7 +6,7 @@
 #include "ordenacion_monticulos.h"
 #include "monticulo_minimos.h"
 
-#define TEST_LEN 10 
+#define TEST_LEN 10
 #define MAX_LENGTH 256000
 #define STARTING_LENGTH 500
 #define UMBRAL_CONFIANZA 500
@@ -19,31 +19,6 @@ double microsegundos() {
     return (t.tv_usec + t.tv_sec * 1000000.0);
 }
 
-void fill_array_sin_orden(int v[], int len) {
-   int i;
-    for (i = 0; i < len; i++) {
-        v[i] = rand() % 10;
-    }
-}
-
-void fill_array_orden_ascendente(int v[], int len) {
-    int i;
-    for (i = 0; i < len; i++) {
-        v[i] = i + 1;
-    }
-}
-
-void fill_array_orden_descendente(int v[], int len) {
-    int i;
-    for (i = 0; i < len; i++) {
-        v[i] = len - i - 1;
-    }
-}
-
-void inicializar_semilla() {
-    srand(time(NULL));
-}
-
 void show_array(int v[], int len) {
     int i;
     printf("\n");
@@ -53,7 +28,7 @@ void show_array(int v[], int len) {
     printf("\n");
 }
 
-double tiempo_test_generico(int v[], int len, void fill_array(int[], int)) {
+double tiempo_test_ordenar_por_monticulos(int v[], int len, void fill_array(int[], int)) {
     //declarar variables
     double t, start, end;
     int i;
@@ -92,6 +67,46 @@ double tiempo_test_generico(int v[], int len, void fill_array(int[], int)) {
     return t;
 }
 
+double tiempo_test_crear_monticulo(int v[], int len, void fill_array(int[], int)) {
+    //declarar variables
+    double t, start, end;
+    int i;
+    pmonticulo mont = malloc(sizeof(struct monticulo));
+
+    //obtener tiempo en ejecutarse
+    fill_array(v, len);
+    start = microsegundos();
+    crearMonticulo(v, len, mont);
+    end = microsegundos();
+    t = end - start;
+
+    //en caso de que sea menor al umbral de confianza repetirlo K veces
+    if(t < UMBRAL_CONFIANZA) {
+        //conseguir el tiempo de K iteraciones
+        start = microsegundos();
+        for (i = 0; i < K; i++) {
+            fill_array(v, len);
+            ordenar_array_por_monticulos(v, len);
+        }
+        end = microsegundos();
+        t = end - start;
+
+        //restarle el tiempo de K iteraciones de rellenar el array
+        start = microsegundos();
+        for (i = 0; i < K; i++)
+            fill_array(v, len);
+        end = microsegundos();
+        t -= end - start;
+
+        //dividir el tiempo entre K iteraciones e imprimir (*)
+        t /= K;
+        printf("(*)");
+    }
+
+    free(mont);
+    return t;
+}
+
 
 //Distintas cotas
 double cota_On0_8 (int n){
@@ -127,19 +142,20 @@ double cota_On2_2 (int n){
 }
 
 void test (void fill_array(int[], int)) {
-    int v[TEST_LEN]; 
-    fill_array(v, TEST_LEN); 
-    show_array(v, TEST_LEN); 
-    printf("\nEs ordenado? %d", es_array_ordenado(v, TEST_LEN)); 
-    printf("\n\n"); 
-    ordenar_array_por_monticulos(v, TEST_LEN); 
-    show_array(v, TEST_LEN); 
-    printf("Es ordenado? %d", es_array_ordenado(v, TEST_LEN)); 
-    printf("\n\n"); 
-} 
+    int v[TEST_LEN];
+    fill_array(v, TEST_LEN);
+    show_array(v, TEST_LEN);
+    printf("\nEs ordenado? %d", es_array_ordenado(v, TEST_LEN));
+    printf("\n\n");
+    ordenar_array_por_monticulos(v, TEST_LEN);
+    show_array(v, TEST_LEN);
+    printf("Es ordenado? %d", es_array_ordenado(v, TEST_LEN));
+    printf("\n\n");
+}
 
-void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), double cota_sobre(int), 
-                             void fill_array(int[], int)) {
+
+void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), double cota_sobre(int),
+                             void fill_array(int[], int), double tipo_test(int[], int, void fill_array(int[], int))) {
     //inicializar variables
     int v[MAX_LENGTH];
     int len;
@@ -147,17 +163,17 @@ void escribir_tabla_generico(double cota_sub(int), double cota_normal(int), doub
 
     //hacer tabla
     for(len = STARTING_LENGTH; len <= MAX_LENGTH; len *= 2) {
-        t = tiempo_test_generico(v, len, fill_array);
+        t = tipo_test(v, len, fill_array);
         printf("\t\t%7d\t\t%14.3lf\t\t%2.10lf\t\t%2.10lf\t\t%2.10lf\n", len, t, t / cota_sub(len), t / cota_normal(len), t / cota_sobre(len));
     }
 }
 
 
 int main(){
-    printf("Test con vector ordenado ascendentemente\n"); 
-    test(fill_array_orden_ascendente);
-    printf("Test con vector desordenado\n"); 
-    test(fill_array_sin_orden); 
-    printf("Test con vector ordenado descendentemente\n"); 
-    test(fill_array_orden_descendente); 
+    printf("Test con vector ordenado ascendentemente\n");
+    test(rellenar_array_ascendente);
+    printf("Test con vector desordenado\n");
+    test(rellenar_array_aleatorio);
+    printf("Test con vector ordenado descendentemente\n");
+    test(rellenar_array_descendente);
 }
