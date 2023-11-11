@@ -1,0 +1,51 @@
+------------------------------------
+|  TÍTULO: Practica 3 Algoritmos   |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+AUTOR1: Alex Mosquera Gundin      LOGIN1: alex.mosquera@udc.es 
+AUTOR2: Heros Vicente Gonzalez    LOGIN2: heros.vicente@udc.es
+GRUPO: 2.2 
+FECHA: 20/10/2023
+ 
+ 
+------------------------------------
+|   CARACTERÍSTICAS DEL EQUIPO:    | 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+Lenovo ThinkBook 15 G2 ITL 
+Memoria RAM: 8.0 Gib 
+Procesador: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Sistema Operativo: Ubuntu 22.04.3 LTS
+Arquitectura: 64 bits
+ 
+ 
+-----------------------------------
+|        INTRODUCCIÓN             |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+La practica 3 consiste en analizar la complejidad computacional de la ordenacion por monticulos de mínimos de un vector. 
+En la práctica, distinguiremos tres casos diferenciados: que el vector este inicializado en orden ascendente, que el vector este inicializado en orden descendente, y que 
+el vector este inicializado sin orden.
+ 
+ 
+-----------------------------------
+|     INFORME DE LA PRÁCTICA      |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+El tiempo se mide en microsegundos.
+ 
+(*) -> El asterisco indica que el tiempo de ejecucion es menor a 500 microsegundos (nuestro umbral de confianza), por lo que se repite el algoritmo K veces.
+       En caso de (*) repetiremos el algoritmo un total de K = 1000 veces.
+ 
+ 
+-----------------------------------
+|        CONCLUSION               |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
